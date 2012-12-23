@@ -1,11 +1,17 @@
-require(['lib/dependencyLoader'],
-
-function(dependencyLoader){
+require([
+	'Game',
+	'lib/dependencyLoader'
+],function(
+	Game,
+	dependencyLoader
+){
 	'use strict';
 
 	dependencyLoader(function(){
 
-		console.log('CDN libraries loaded');
+		Game.makeDom();
+		
+		$('body').append(Game.getDom());
 		
 	});
 });
